@@ -257,10 +257,10 @@ def main():
     
     # Daftar file citra tugas restorasi Anda (Pastikan file ada di folder images)
     IMAGE_LIST = [
-        "potrait.jpg",  # Ganti dengan nama file asli Anda
-        "potrait-gray.jpg",        # Ganti dengan nama file noise salt & pepper
-        "potrait-gray-saltpepper-2.jpg",     # Ganti dengan nama file noise gaussian
-        "potrait-gray-gaussian-2.jpg"        # Ganti dengan nama file hasil restorasi
+        "potrait-gray.jpg",  # Ganti dengan nama file asli Anda
+        "potrait-gray-saltpepper-2.jpg",        # Ganti dengan nama file noise salt & pepper
+        "landscape-gray.jpg",     # Ganti dengan nama file noise gaussian
+        "landscape-gray-gaussian-2.jpg"        # Ganti dengan nama file hasil restorasi
     ]
 
     ensure_dir(OUTPUT_FOLDER)
