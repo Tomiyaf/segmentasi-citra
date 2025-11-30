@@ -1,28 +1,28 @@
 # Program Segmentasi Citra - Deteksi Tepi (Edge Detection)
 
-Program ini dibuat untuk memenuhi tugas **Segmentasi Citra** dengan pendekatan *discontinuity* (deteksi tepi). Program ini ditulis dalam bahasa Python dalam satu file tunggal dan mengimplementasikan operasi konvolusi manual tanpa menggunakan fungsi deteksi tepi bawaan library.
+Program ini dibuat untuk memenuhi tugas **Segmentasi Citra** dengan pendekatan _discontinuity_ (deteksi tepi). Program ini ditulis dalam bahasa Python dalam satu file tunggal dan mengimplementasikan operasi konvolusi manual tanpa menggunakan fungsi deteksi tepi bawaan library.
 
 ## 📋 Fitur Utama
 
 1.  **Implementasi Konvolusi Manual**:
-      * Menggunakan operasi *sliding window* manual.
-      * Menggunakan tipe data `float32` untuk presisi perhitungan.
-      * Menerapkan *kernel flipping* sesuai definisi matematis konvolusi.
-      * Menggunakan *Padding Tepi* (`BORDER_REPLICATE`) untuk hasil tepian yang lebih akurat.
+    - Menggunakan operasi _sliding window_ manual.
+    - Menggunakan tipe data `float32` untuk presisi perhitungan.
+    - Menerapkan _kernel flipping_ sesuai definisi matematis konvolusi.
+    - Menggunakan _Padding Tepi_ (`BORDER_REPLICATE`) untuk hasil tepian yang lebih akurat.
 2.  **4 Metode Operator Tepi**:
-      * [cite\_start]**Roberts** (Kernel 2x2) [cite: 73]
-      * [cite\_start]**Prewitt** (Kernel 3x3) [cite: 77]
-      * [cite\_start]**Sobel** (Kernel 3x3) [cite: 78]
-      * [cite\_start]**Frei-Chen** (Kernel 3x3 Isotropik) [cite: 80]
+    - [cite\_start]**Roberts** (Kernel 2x2) [cite: 73]
+    - [cite\_start]**Prewitt** (Kernel 3x3) [cite: 77]
+    - [cite\_start]**Sobel** (Kernel 3x3) [cite: 78]
+    - [cite\_start]**Frei-Chen** (Kernel 3x3 Isotropik) [cite: 80]
 3.  **Visualisasi Panel**: Secara otomatis membuat gambar panel perbandingan (Original vs 4 Metode) untuk memudahkan analisis laporan.
 
 ## 🛠️ Persyaratan Sistem
 
 Pastikan Anda telah menginstal Python dan library berikut:
 
-  * **Python** (3.x)
-  * **OpenCV** (`cv2`)
-  * **NumPy**
+- **Python** (3.x)
+- **OpenCV** (`cv2`)
+- **NumPy**
 
 Untuk menginstal library yang dibutuhkan, jalankan perintah berikut di terminal/command prompt:
 
@@ -37,7 +37,7 @@ Agar program berjalan dengan benar, pastikan struktur folder Anda terlihat seper
 ```text
 folder_tugas_anda/
 │
-├── tugas_segmentasi.py      # File kode program utama
+├── segmentasi.py      # File kode program utama
 ├── README.md                # File dokumentasi ini
 ├── images/                  # FOLDER INPUT: Masukkan citra tugas di sini
 │   ├── potrait.jpg
@@ -53,7 +53,7 @@ folder_tugas_anda/
 1.  **Siapkan Citra**: Masukkan 4 citra yang akan diproses (Citra Asli, Citra Grayscale, Noise Salt & Pepper, Noise Gaussian) ke dalam folder `images`.
 
 2.  **Konfigurasi Nama File**:
-    Buka file `tugas_segmentasi.py` menggunakan text editor (VS Code, Notepad++, dll). Cari bagian `def main():` dan sesuaikan list `IMAGE_LIST` dengan nama file gambar Anda yang sebenarnya.
+    Buka file `segmentasi.py` menggunakan text editor (VS Code, Notepad++, dll). Cari bagian `def main():` dan sesuaikan list `IMAGE_LIST` dengan nama file gambar Anda yang sebenarnya.
 
     ```python
     # Contoh di dalam kode:
@@ -69,7 +69,7 @@ folder_tugas_anda/
     Buka terminal atau command prompt di folder proyek, lalu jalankan:
 
     ```bash
-    python tugas_segmentasi.py
+    python segmentasi.py
     ```
 
 4.  **Cek Hasil**:
@@ -87,6 +87,6 @@ Untuk setiap citra input, program akan menghasilkan 5 file output:
 
 ## 📝 Catatan Implementasi
 
-  * Program secara otomatis mengonversi citra input menjadi **Grayscale** sebelum diproses.
-  * Magnitude gradien dihitung menggunakan rumus $M = \sqrt{G_x^2 + G_y^2}$.
-  * Hasil akhir dinormalisasi ke rentang 0-255 (`uint8`) agar dapat disimpan sebagai gambar `.png`.
+- Program secara otomatis mengonversi citra input menjadi **Grayscale** sebelum diproses.
+- Magnitude gradien dihitung menggunakan rumus $M = \sqrt{G_x^2 + G_y^2}$.
+- Hasil akhir dinormalisasi ke rentang 0-255 (`uint8`) agar dapat disimpan sebagai gambar `.png`.
